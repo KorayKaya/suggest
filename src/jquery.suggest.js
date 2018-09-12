@@ -1,7 +1,7 @@
 /*!
  * Suggest jQuery plugin
  *
- * Copyright (c) 2015 Florian Plank (http://www.polarblau.com/)
+ * Copyright (c) 2011 Florian Plank (http://www.polarblau.com/)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
  * and GPL (GPL-LICENSE.txt) licenses.
  *
@@ -46,9 +46,9 @@
           'lineHeight'      : $this.css('lineHeight'),
           'fontWeight'      : $this.css('fontWeight'),
           'letterSpacing'   : $this.css('letterSpacing'),
-          'backgroundColor' : $this.css('backgroundColor'),
-          'color'           : settings.suggestionColor,
-          'fontKerning'     : $this.css('fontKerning')
+          'pointer-events'  : 'none',
+          'backgroundColor' : 'transparent',
+          'color'           : settings.suggestionColor
         }
       });
 
@@ -138,7 +138,7 @@
 
           // accept suggestion with 'enter' or 'tab'
           // if the suggestion hasn't been accepted yet
-          if (code == 9 || code == 13) {
+          if (code == 9) {
             // only accept if there's anything suggested
             if ($suggest.text().length > 0) {
               e.preventDefault();
